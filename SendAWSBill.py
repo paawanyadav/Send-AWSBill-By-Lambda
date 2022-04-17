@@ -25,14 +25,13 @@ def lambda_handler(event,context):
 
 
     CurrentAccountname2 =  boto3.client('organizations').list_accounts()
-    #print(CurrentAccountname2)
 #print(CurrentAccountname2['Accounts'][0]["Email"])
 ####################INPUT VARIABLES####################### 
 
 # Replace sender@example.com with your "From" address. 
     # This address must be verified.
-    SENDER = 'pawan.yadav@tothenew.com'  
-    SENDERNAME = 'Pawan Yadav'
+    SENDER = 'senders mail id' 
+    SENDERNAME = 'Senders name'
     
     for i in range(len(CurrentAccountname2['Accounts'])):
         TempReci.append(CurrentAccountname2['Accounts'][i]["Email"])
@@ -43,10 +42,10 @@ def lambda_handler(event,context):
     RECIPIENT  = temp
     
     # Replace smtp_username with your Amazon SES SMTP user name.
-    USERNAME_SMTP = "AKIAWTXJNSSS7MY7ZAUQ"
+    USERNAME_SMTP = "write your SMTP username"
     
     # Replace smtp_password with your Amazon SES SMTP password.
-    PASSWORD_SMTP = "BI8yM52uvJIThh/d9RSPrRfDxpe8JrfNeDiAwWKKK4X5"
+    PASSWORD_SMTP = "write your SMTP password"
    
     # If you're using Amazon SES in an AWS Region other than US West (Oregon), 
     # replace email-smtp.us-west-2.amazonaws.com with the Amazon SES SMTP  
